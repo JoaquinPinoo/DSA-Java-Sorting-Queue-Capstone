@@ -2,7 +2,7 @@
 
 ## Project Title
 
-Library Borrowing Request System
+**Library Borrowing Request System**
 
 ## Project Description
 
@@ -71,12 +71,12 @@ The system also provides sorting functions for books and borrowing records, maki
 ### Sorting and Records
 
 **Sort Books**
-- Books can be sorted by title, A-Z.
-- Books can be sorted by publication year, oldest first.
+- Sort books by title in A-Z order.
+- Sort books by publication year from oldest to newest.
 
 **Sort Borrowing Records**
-- Borrowing records can be sorted by student name, A-Z.
-- Borrowing records can be sorted by request number, lowest first.
+- Sort borrowing records by student name in A-Z order.
+- Sort borrowing records by request number from lowest to highest.
 
 **Display All Borrowing Records**
 - Displays all borrowing requests along with their request number, student name, book, and current status.
@@ -85,7 +85,7 @@ The system also provides sorting functions for books and borrowing records, maki
 
 ### ArrayLists
 
-The system uses multiple ArrayList objects to store and manage records.
+The system uses multiple `ArrayList` objects to store and manage book and borrowing records.
 
 For books, the following ArrayLists are used:
 
@@ -101,29 +101,27 @@ For borrowing records, the system uses:
 - `reqBooks` – stores requested book titles.
 - `reqStatus` – stores the status of each request.
 
-The ArrayLists allow records to dynamically grow when new books or borrowing requests are added. Related information uses the same index, so the records can be connected together.
-
-For example, the book at index 0 in `bookTitles`, `bookAuthors`, `bookYears`, and `bookCopies` represents the same book.
+The ArrayLists allow records to dynamically grow when new books or borrowing requests are added. Related information uses the same index, allowing the different pieces of information to stay connected.
 
 ### Queue
 
-The system uses a `Queue<Integer>` called `pendingQueue` to manage borrowing requests.
+The system uses a `Queue<Integer>` called `pendingQueue` to manage pending borrowing requests.
 
-The queue follows FIFO (First-In, First-Out). This means the first borrowing request added to the queue is the first request that will be processed.
+The queue follows the FIFO (First-In, First-Out) principle. This means the first borrowing request added to the queue is the first request that will be processed.
 
-The queue uses:
+The queue uses the following operations:
 
 - `add()` – adds a new request to the back of the queue.
 - `poll()` – removes and processes the request at the front.
 - `peek()` – views the next request without removing it.
-- `isEmpty()` – checks whether there are no pending requests.
+- `isEmpty()` – checks whether the queue is empty.
 - `remove()` – removes a selected pending request.
 
 The request number is stored in the queue, while the other details of the request are stored in the corresponding ArrayLists.
 
 ## Sorting Algorithm Explanation
 
-The application provides three sorting algorithms:
+The application implements three sorting algorithms: Bubble Sort, Selection Sort, and Insertion Sort.
 
 ### Bubble Sort
 
@@ -139,13 +137,13 @@ In this system, Selection Sort can be used to sort books by title or publication
 
 ### Insertion Sort
 
-Insertion Sort builds the sorted list one record at a time by taking each new record and inserting it into its proper position among the previously sorted records.
+Insertion Sort builds the sorted list one record at a time by taking each record and inserting it into its proper position among the previously sorted records.
 
 In this system, Insertion Sort can be used to sort books by title or publication year and borrowing records by student name or request number.
 
 ### Purpose of Sorting
 
-Sorting makes the library records easier to organize, read, and manage. For example, users can arrange books alphabetically by title or arrange borrowing requests by request number.
+Sorting makes the library records easier to organize, read, and manage. Users can arrange books alphabetically by title, by publication year, or organize borrowing records by student name or request number.
 
 The sorting operation changes the order of the records in the corresponding ArrayLists. The pending queue itself is not affected by sorting, so its FIFO processing order remains unchanged.
 
@@ -164,20 +162,40 @@ Save the Java source code as:
 Main.java
 ```
 
-Open Command Prompt or Terminal and navigate to the folder containing the file.
+Open Command Prompt or Terminal and navigate to the folder containing `Main.java`.
 
-Compile the program:
+Compile the program using:
 
 ```bash
 javac Main.java
 ```
 
-Run the program:
+After successfully compiling the program, run it using:
 
 ```bash
 java Main
 ```
 
-The Library Borrowing Request System menu will appear. Enter the number corresponding to the desired operation.
+The Library Borrowing Request System menu will appear in the console.
 
-Choose `0` to exit the program.
+Enter the number corresponding to the desired operation and follow the instructions displayed by the program.
+
+To close the program, select the **Exit** option.
+
+## Screenshots
+
+Screenshots of the actual application are included in the project's separate `screenshots` folder.
+
+The screenshots correspond to the submitted implementation of the Library Borrowing Request System and demonstrate the application's main features and outputs.
+
+## Project Files
+
+The project submission contains:
+
+- `Main.java` – Java source code of the application.
+- `README.md` – project documentation.
+- `screenshots/` – folder containing screenshots of the actual application.
+
+## Submission
+
+The complete project, including the README file, Java source code, and required screenshots, should be submitted through the designated submission platform or project repository.
