@@ -1,9 +1,5 @@
 # Library Borrowing Request System
 
-## Project Title
-
-**Library Borrowing Request System**
-
 ## Project Description
 
 The Library Borrowing Request System is a Java console-based application designed to manage books and student borrowing requests in a library.
@@ -207,11 +203,67 @@ Enter the number corresponding to the desired operation and follow the instructi
 
 To close the program, select the **Exit** option.
 
-## Screenshots
+## Screenshots of the System
 
-Screenshots of the actual application are included in the project's separate `screenshots` folder.
+### 7.1 Main Menu
 
-The screenshots correspond to the submitted implementation of the Library Borrowing Request System and demonstrate the application's main features and outputs.
+![Main Menu](screenshots/01%20-%20Main%20Menu.png)
+
+*Main menu of the Library Borrowing Request System showing the available operations.*
+
+### 7.2 Adding Records
+
+![Adding Records](screenshots/02%20-%20Adding%20records%20and%20displaying%20stored%20records%201.png)
+
+*Shows new borrowing records being added to the system.*
+
+### 7.3 Displaying Stored Records
+
+![Displaying Stored Records](screenshots/03%20-%20Adding%20records%20and%20displaying%20stored%20records%202.png)
+
+*Displays the borrowing records currently stored in the system.*
+
+### 7.4 Enqueue
+
+![Enqueue](screenshots/04%20-%20Enqueue.png)
+
+*Adds a new borrowing request to the back of the pending queue.*
+
+### 7.5 Peek
+
+![Peek](screenshots/05%20-%20Peek.png)
+
+*Displays the next borrowing request without removing it from the queue.*
+
+### 7.6 Dequeue and FIFO
+
+![Dequeue and FIFO](screenshots/06%20-%20Dequeue%20-%20shows%20FIFO.png)
+
+*Processes the first request added to the queue, demonstrating FIFO behavior.*
+
+### 7.7 Displaying the Queue
+
+![Displaying the Queue](screenshots/07%20-%20Displaying%20the%20queue.png)
+
+*Displays all pending borrowing requests from the front to the back of the queue.*
+
+### 7.8 Sorting Algorithm 1 - Bubble Sort
+
+![Bubble Sort](screenshots/08%20-%20Bubble%20Sort%20-%20First%20Sorting%20Algorithm.png)
+
+*Shows the records before and after applying Bubble Sort.*
+
+### 7.9 Sorting Algorithm 2 - Selection Sort
+
+![Selection Sort](screenshots/09%20-%20Selection%20Sort%20-%20Second%20Sorting%20Algorithm.png)
+
+*Shows the records before and after applying Selection Sort.*
+
+### 7.10 Input Validation and Error Messages
+
+![Input Validation](screenshots/10%20-%20Input%20Validation.png)
+
+*Invalid inputs are rejected and an appropriate error message is displayed.*
 
 ## Project Files
 
