@@ -272,7 +272,3 @@ The project submission contains:
 - `Main.java` – Java source code of the application.
 - `README.md` – project documentation.
 - `screenshots/` – folder containing screenshots of the actual application.
-
-## Submission
-
-The complete project, including the README file, Java source code, and required screenshots, should be submitted through the designated submission platform or project repository.
