@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.Queue;
@@ -11,13 +12,19 @@ public class Main {
         final String RESET = "\u001B[0m";
         final String GREEN = "\u001B[32m";
         final String RED = "\u001B[31m";
+        final String BLUE = "\u001B[94m";
+        final String PURPLE = "\u001B[35m";
 
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<String> bookTitles = new ArrayList<>();
-        ArrayList<String> bookAuthors = new ArrayList<>();
-        ArrayList<Integer> bookYears = new ArrayList<>();
-        ArrayList<Integer> bookCopies = new ArrayList<>();
+        ArrayList<String> bookTitles = new ArrayList<>(Arrays.asList(
+                "The Great Gatsby", "Things Fall Apart", "Hamlet", "Beloved",
+                "Jane Eyre", "One Hundred Years of Solitude", "Les Miserables", "Noli Me Tangere"));
+        ArrayList<String> bookAuthors = new ArrayList<>(Arrays.asList(
+                "F. Scott Fitzgerald", "Chinua Achebe", "William Shakespeare", "Toni Morrison",
+                "Charlotte Bronte", "Gabriel Garcia Marquez", "Victor Hugo", "Jose Rizal"));
+        ArrayList<Integer> bookYears = new ArrayList<>(Arrays.asList(1925, 1958, 1603, 1987, 1847, 1967, 1862, 1887));
+        ArrayList<Integer> bookCopies = new ArrayList<>(Arrays.asList(2, 2, 3, 2, 1, 1, 1, 3));
 
         ArrayList<Integer> reqNumbers = new ArrayList<>();
         ArrayList<String> reqStudents = new ArrayList<>();
@@ -28,19 +35,6 @@ public class Main {
 
         int nextRequestNo = 1001;
 
-        String[] sampleTitles = {"Introduction to Algorithms", "Clean Code",
-                "Java: The Complete Reference", "Data Structures and Algorithms", "Noli Me Tangere"};
-        String[] sampleAuthors = {"Thomas Cormen", "Robert Martin", "Herbert Schildt",
-                "Michael Goodrich", "Jose Rizal"};
-        int[] sampleYears = {2009, 2008, 2018, 2014, 1887};
-        int[] sampleCopies = {2, 1, 3, 1, 2};
-        for (int i = 0; i < sampleTitles.length; i++) {
-            bookTitles.add(sampleTitles[i]);
-            bookAuthors.add(sampleAuthors[i]);
-            bookYears.add(sampleYears[i]);
-            bookCopies.add(sampleCopies[i]);
-        }
-
         int choice = 0;
         int num = 0;
         String text = "";
@@ -49,27 +43,27 @@ public class Main {
         try {
             while (running) {
 
-                System.out.println("\n==============================================");
-                System.out.println("   LIBRARY BORROWING REQUEST SYSTEM");
-                System.out.println("==============================================");
-                System.out.println(" BOOKS");
+                System.out.println(PURPLE + "\n==============================================" + RESET);
+                System.out.println(PURPLE + "   LIBRARY BORROWING REQUEST SYSTEM" + RESET);
+                System.out.println(PURPLE + "==============================================" + RESET);
+                System.out.println(BLUE + " BOOKS" + RESET);
                 System.out.println("  1. Display book catalog");
                 System.out.println("  2. Add a book");
                 System.out.println("  3. Search book by title");
                 System.out.println("  4. Update number of copies");
-                System.out.println(" REQUEST QUEUE (FIFO)");
-                System.out.println("  5. Register borrowing request (Enqueue)");
-                System.out.println("  6. Process next request (Dequeue)");
+                System.out.println(BLUE + " REQUEST QUEUE" + RESET);
+                System.out.println("  5. Register borrowing request");
+                System.out.println("  6. Process next request");
                 System.out.println("  7. Peek at next request");
                 System.out.println("  8. Display pending queue");
                 System.out.println("  9. Check if queue is empty");
                 System.out.println(" 10. Cancel a pending request");
-                System.out.println(" SORTING / RECORDS");
+                System.out.println(BLUE + " SORTING / RECORDS" + RESET);
                 System.out.println(" 11. Sort books (title / publication year)");
                 System.out.println(" 12. Sort borrowing records (student name / request no.)");
                 System.out.println(" 13. Display all borrowing records");
                 System.out.println("  0. Exit");
-                System.out.println("----------------------------------------------");
+                System.out.println(PURPLE + "----------------------------------------------" + RESET);
 
                 while (true) {
                     System.out.print("Enter choice: ");
@@ -90,9 +84,9 @@ public class Main {
                         if (bookTitles.isEmpty()) {
                             System.out.println(RED + "No books in the catalog." + RESET);
                         } else {
-                            System.out.printf("%-4s %-34s %-20s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
+                            System.out.printf("%-4s %-34s %-24s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
                             for (int i = 0; i < bookTitles.size(); i++) {
-                                System.out.printf("%-4d %-34s %-20s %-6d %-6d%n", (i + 1), bookTitles.get(i),
+                                System.out.printf("%-4d %-34s %-24s %-6d %-6d%n", (i + 1), bookTitles.get(i),
                                         bookAuthors.get(i), bookYears.get(i), bookCopies.get(i));
                             }
                         }
@@ -180,9 +174,9 @@ public class Main {
                             System.out.println(RED + "No books in the catalog." + RESET);
                             break;
                         }
-                        System.out.printf("%-4s %-34s %-20s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
+                        System.out.printf("%-4s %-34s %-24s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
                         for (int i = 0; i < bookTitles.size(); i++) {
-                            System.out.printf("%-4d %-34s %-20s %-6d %-6d%n", (i + 1), bookTitles.get(i),
+                            System.out.printf("%-4d %-34s %-24s %-6d %-6d%n", (i + 1), bookTitles.get(i),
                                     bookAuthors.get(i), bookYears.get(i), bookCopies.get(i));
                         }
                         while (true) {
@@ -225,9 +219,9 @@ public class Main {
                             System.out.println(RED + "Input cannot be empty." + RESET);
                         }
                         System.out.println("--- AVAILABLE BOOKS ---");
-                        System.out.printf("%-4s %-34s %-20s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
+                        System.out.printf("%-4s %-34s %-24s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
                         for (int i = 0; i < bookTitles.size(); i++) {
-                            System.out.printf("%-4d %-34s %-20s %-6d %-6d%n", (i + 1), bookTitles.get(i),
+                            System.out.printf("%-4d %-34s %-24s %-6d %-6d%n", (i + 1), bookTitles.get(i),
                                     bookAuthors.get(i), bookYears.get(i), bookCopies.get(i));
                         }
                         while (true) {
@@ -489,9 +483,9 @@ public class Main {
 
                             System.out.println(stage == 0 ? "\n--- BEFORE SORTING ---" : "\n--- AFTER SORTING ---");
                             if (forBooks) {
-                                System.out.printf("%-4s %-34s %-20s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
+                                System.out.printf("%-4s %-34s %-24s %-6s %-6s%n", "No.", "Title", "Author", "Year", "Copies");
                                 for (int i = 0; i < bookTitles.size(); i++) {
-                                    System.out.printf("%-4d %-34s %-20s %-6d %-6d%n", (i + 1), bookTitles.get(i),
+                                    System.out.printf("%-4d %-34s %-24s %-6d %-6d%n", (i + 1), bookTitles.get(i),
                                             bookAuthors.get(i), bookYears.get(i), bookCopies.get(i));
                                 }
                             } else {
@@ -531,11 +525,6 @@ public class Main {
                         running = false;
                         break;
                     }
-                }
-
-                if (running) {
-                    System.out.print("\nPress Enter to continue...");
-                    sc.nextLine();
                 }
             }
         } catch (NoSuchElementException e) {
