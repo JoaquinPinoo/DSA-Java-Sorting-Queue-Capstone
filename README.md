@@ -81,6 +81,16 @@ The system also provides sorting functions for books and borrowing records, maki
 **Display All Borrowing Records**
 - Displays all borrowing requests along with their request number, student name, book, and current status.
 
+### Input Validation and Color-Coded Messages
+
+**Input Validation**
+- Invalid menu choices, non-numeric input, numbers outside the allowed range, and empty text are rejected, and the program asks for the input again instead of closing.
+
+**Color-Coded Display**
+- Green messages indicate successful actions, such as an approved request or a successfully sorted list.
+- Red messages indicate errors or failed actions, such as invalid input, an empty queue, or a rejected request.
+- The main menu uses purple for the title and borders and blue for the section headings.
+
 ## Data Structure Explanation
 
 ### ArrayLists
@@ -103,6 +113,17 @@ For borrowing records, the system uses:
 
 The ArrayLists allow records to dynamically grow when new books or borrowing requests are added. Related information uses the same index, allowing the different pieces of information to stay connected.
 
+The book ArrayLists are preloaded with the following eight books when the program starts:
+
+- The Great Gatsby – F. Scott Fitzgerald (1925)
+- Things Fall Apart – Chinua Achebe (1958)
+- Hamlet – William Shakespeare (1603)
+- Beloved – Toni Morrison (1987)
+- Jane Eyre – Charlotte Bronte (1847)
+- One Hundred Years of Solitude – Gabriel Garcia Marquez (1967)
+- Les Miserables – Victor Hugo (1862)
+- Noli Me Tangere – Jose Rizal (1887)
+
 ### Queue
 
 The system uses a `Queue<Integer>` called `pendingQueue` to manage pending borrowing requests.
@@ -115,7 +136,9 @@ The queue uses the following operations:
 - `poll()` – removes and processes the request at the front.
 - `peek()` – views the next request without removing it.
 - `isEmpty()` – checks whether the queue is empty.
+- `contains()` – checks whether a request is still pending before it is canceled.
 - `remove()` – removes a selected pending request.
+- Looping through the queue – displays the pending requests from front to back without removing them.
 
 The request number is stored in the queue, while the other details of the request are stored in the corresponding ArrayLists.
 
@@ -153,6 +176,8 @@ The sorting operation changes the order of the records in the corresponding Arra
 
 - Java Development Kit (JDK)
 - Java-compatible IDE or Command Prompt/Terminal
+
+A terminal that supports ANSI colors is recommended, such as Windows Terminal, macOS Terminal, a Linux terminal, or the VS Code terminal. Some IDE consoles may display color codes such as `[32m` as plain text instead of colors.
 
 ### Using Command Prompt or Terminal
 
